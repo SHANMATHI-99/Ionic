@@ -1,0 +1,59 @@
+<ion-header >  
+	<ion-toolbar class="igcolr">  
+	<ion-row>
+      
+		  <ion-col class="ion-text-center">
+        <ion-row>
+          <ion-col>
+			<div class="ion-text-center">
+				<ion-label style="color: black;font: bold;font-weight: bold;font-size:20px;">Task details</ion-label>
+			</div>
+      </ion-col>
+    </ion-row>
+		  </ion-col>
+      <ion-col>
+        <ion-row>
+          <ion-col>
+        <div class="ion-text-right" (click)="close()">
+          <ion-icon  style="color: black;font: bold;font-weight: bold;font-size:25px;"  class="ion-text-right" name="close-outline"></ion-icon>
+        </div>
+      </ion-col>
+    </ion-row>
+        </ion-col>
+		</ion-row> 
+	</ion-toolbar>   
+  </ion-header>
+
+<ion-content class="darkblue">
+
+    <div >
+  <ion-card>
+    
+  
+    <ion-card-content>
+  
+      <ion-row style="font-size: x-large;color: black;font-weight: bold;">
+          Task notes : 
+      </ion-row>
+      <ion-row  style="font-size: medium;color: black;">
+        {{task_details.details}}
+      </ion-row>
+    
+      
+      <ion-row style="font-size: medium;color: black;">
+        <ion-label>task date : {{task_details.due_date}}</ion-label>
+    </ion-row>
+  
+      <ion-row style="font-size: medium;color: black;">
+        Time : {{task_details.due_time}}
+      </ion-row>
+      
+      <ion-row>
+            <ion-button (click)="delete()">Delete</ion-button>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</div>
+
+
+</ion-content>

@@ -1,0 +1,72 @@
+<ion-header >  
+	<ion-toolbar class="igcolr">  
+	<ion-row>
+		<ion-col>
+      <ion-row>
+        <ion-col>
+			<div class="ion-text-left" >
+				<ion-icon  style="color: black;font: bold;font-weight: bold;font-size:25px;"  class="ion-text-left" name="logo-edge"></ion-icon>
+			</div>
+    </ion-col>
+  </ion-row>
+		  </ion-col>
+		  <ion-col>
+        <ion-row>
+          <ion-col>
+			<div class="ion-text-center">
+				<ion-label style="color: black;font: bold;font-weight: bold;font-size:20px;">Day List</ion-label>
+			</div>
+      </ion-col>
+    </ion-row>
+		  </ion-col>
+		  <ion-col>
+        <div>
+          <ion-row>
+          <ion-col>
+            <div class="ion-text-right" >
+              <!-- <ion-icon (click)="friends_list()" style=" color: black;font: bold;font-size:25px;font-weight: bold;" name="search-outline"></ion-icon> -->
+            </div>
+        </ion-col>
+        <ion-col>
+          <div class="ion-text-right" >
+            <ion-icon (click)="settings()" style=" color: black;font: bold;font-weight: bold;font-size:25px;" name="settings"></ion-icon>
+          </div>
+        </ion-col>
+      </ion-row>
+        </div>
+      </ion-col>
+		</ion-row> 
+	</ion-toolbar>   
+  </ion-header>
+
+<ion-content class="darkblue">
+  <div *ngIf="tasks_details.length !=0">
+    <div *ngFor="let user of tasks_details">
+  <ion-card>
+    <ion-item>
+      <ion-icon name="pin" slot="start"></ion-icon>
+      <ion-label>task date : {{user.due_date}}</ion-label>
+      <ion-button fill="outline" slot="end" (click)="view(user)">view</ion-button>
+    </ion-item>
+  
+    <ion-card-content>
+      <ion-row style="font-size: medium;color: black;">
+          Task notes : 
+      </ion-row>
+      <ion-row  style="color: black;">
+        {{user.details}}
+      </ion-row>
+      <ion-row style="color: black;">
+        Time : {{user.due_time}}
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</div>
+</div>
+
+  <ion-fab  (click)="task()" vertical="bottom" horizontal="end" slot="fixed">  
+    <ion-fab-button class="black">  
+      <ion-icon class="blue"  name="add-outline"></ion-icon>  
+    </ion-fab-button>  
+  </ion-fab> 
+</ion-content>
